@@ -77,32 +77,27 @@ img{
     fill: #2f2f37;
 }
 
-.menu-phone{
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    position: fixed;
-    top: 0;
-    background: #ffffff;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.tel-blu{
+    color: #4d5ae5;
 }
 
-.modal-tel{
-    padding: 24px 24px 40px 16px;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    border-radius: 4px;
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
-    background: #fcfcfc;
-    outline: transparent;
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #ffffff; 
+
+
+.close{
+    position: absolute;
+    border-radius: 100%;
+    border: none;
+    display: block;
+fill: #e7e9fc;
+stroke-width: 1px;
+stroke: #2e2f42;
+top: 24px;
+right: 24px;
+display: flex;
+justify-content: center;
+align-items: center;
+ margin-left: auto;
+ margin-bottom: 24px;
 }
 
 .link-nav-mob{
@@ -115,6 +110,53 @@ color: #2e2f42;
 
 .link-nav-mob:hover{
     color: #404bbf;
+}
+
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+  
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+.menu-phone{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-phone.is-open{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal-tel{
+    position: relative;
+    padding-top: 72px;
+    padding-bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .address-item-mob{
@@ -136,6 +178,9 @@ color: #434455;
 .address-text-mob:hover{
     color: #4d5ae5;
 }
+.blu-mob{
+    color: #404bbf;
+}
 
 .soc-team-mob{
     display: flex;
@@ -147,8 +192,6 @@ color: #434455;
 
 .mob-menu-list{
     display: flex;
-align-items: flex-start;
-justify-content: flex-start;
 flex-direction: column;
 gap: 40px;
 margin-bottom: 168px;
@@ -160,21 +203,7 @@ margin-bottom: 168px;
     justify-content: space-between;
 }
 
-.close{
-    border-radius: 100%;
-    border: none;
-    display: block;
-fill: #e7e9fc;
-stroke-width: 1px;
-stroke: #2e2f42;
-width: 24px;
- height: 24px;
-display: flex;
-justify-content: center;
-align-items: center;
- margin-left: auto;
- margin-bottom: 24px;
-}
+
 
 .close-modal-mob{
     fill: #2e2f42;
@@ -224,6 +253,7 @@ align-items: center;
     left: 0;
     bottom: -1px;
 }
+
 
 .header-menu-list li{
     margin-right: 0;
@@ -410,6 +440,7 @@ align-items: center;
 .team-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     row-gap: 72px;
     list-style: none;
     padding: 0;
@@ -599,13 +630,16 @@ align-items: center;
     letter-spacing: 0.02em;
     color: #f4f4fd;
     width: 288px;
-    margin-bottom: 72px;
 }
 
 .div-footer{
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
+}
+
+.star{
+    margin-bottom: 72px;
 }
 
 .div-subscribe{
@@ -629,7 +663,7 @@ border-radius: 4px;
 font-size: 12px;
 line-height: 2;
 letter-spacing: 0.04em;
-width: 264px;
+width: 288px;
 height: 40px;
 box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 background-color: transparent;
@@ -683,7 +717,6 @@ border: none;
 .icon-soc{
     display: flex;
     gap: 16px;
-    margin-bottom: 72px;
 }
 
 .soc-hover{
@@ -719,6 +752,7 @@ border: none;
 
 .div-footer-media{
     margin: 0 auto;
+    margin-bottom: 72px;
 }
 
 .footer-media{
@@ -976,6 +1010,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         display: block;
         display: flex;
     }
+   
     .nav-div{
         display: flex;
         align-items: center;
@@ -989,6 +1024,16 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         margin-right: 120px;
     }
     .address-item{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        flex-direction: row-reverse
+    }
+     .address-text{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.16667;
+        letter-spacing: 0.04em;
         display: block;
     }
     .current::after{
@@ -1023,6 +1068,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .strategy-list{
         gap: 24px;
+        row-gap: 72px;
     }
     .strategy-iteil {
           width: calc((100% - 24px) / 2)
@@ -1048,7 +1094,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         row-gap: 72px;
     }
     .div-footer{
-        padding-left: 92px;
+        padding-left: 108px;
     }
     .star{
         margin-right: 24px;
@@ -1056,6 +1102,13 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     .logo{
         display: flex;
         justify-content: flex-start
+    }
+    
+    .div-footer-media {
+        margin: 0;
+    }
+    .text-footer{
+        width: 264px;
     }
     .footer-media{
         display: flex; 
@@ -1067,6 +1120,9 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .form-footer{
         gap: 24px;
+    }
+    .footer-email{
+    width: 264px;
     }
     .modal{
         width: 408px;
@@ -1111,7 +1167,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .business{
         padding: 188px 0;
-        max-width: 1158px;
+        max-width: 1440px;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)),
         url(../images/people-office.jpg);
@@ -1196,6 +1252,10 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     .div-footer{
         display: flex;
         flex-wrap: nowrap;
+    }
+    .star{
+        margin-right: 120px;
+        margin-bottom: 0;
     }
     .form-footer{
         display: flex;
